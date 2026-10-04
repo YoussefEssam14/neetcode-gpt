@@ -10,8 +10,6 @@ class Solution:
         err = (y_hat - y_true) * y_hat * (1- y_hat)
         m = w.shape[0]
         dl_dw = np.zeros(m)
-        for j in range(m):
-            dl_dw[j] = err * x[j]
         dl_db = err
-        return (np.round(dl_dw,5),round(dl_db,5))
+        return (np.round(err * x,5),round(dl_db,5))
 
